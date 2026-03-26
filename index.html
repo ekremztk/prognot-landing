@@ -72,12 +72,11 @@ h2{font-family:var(--fh);font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter
 
 /* CLIP STRIP */
 .clip-strip{position:relative;z-index:1;margin-top:56px;animation:fadeUp .8s .6s both}
-.clip-strip-mask{overflow:hidden;position:relative}
+.clip-strip-mask{overflow-x:clip;overflow-y:visible;position:relative}
 .clip-strip-mask::before,.clip-strip-mask::after{content:'';position:absolute;top:0;bottom:0;width:160px;z-index:10;pointer-events:none}
 .clip-strip-mask::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
 .clip-strip-mask::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
-.clip-row{display:flex;gap:22px;animation:stripScroll 32s linear infinite;width:max-content;padding:24px 0;align-items:center}
-@keyframes stripScroll{from{transform:translateX(0)}to{transform:translateX(-1134px)}}
+.clip-row{display:flex;gap:22px;width:max-content;padding:24px 0;align-items:center;will-change:transform}
 
 .clip-thumb{width:140px;height:250px;border-radius:18px;overflow:hidden;flex-shrink:0;position:relative;cursor:pointer;transition:transform .45s var(--spring);transform-origin:center center}
 .clip-thumb:hover{transform:scale(1.13) translateY(-12px);z-index:20}
@@ -358,23 +357,7 @@ footer{border-top:1px solid var(--border);padding:56px 24px 36px;position:relati
     <div class="clip-strip-mask">
       <div class="clip-row" id="clipRow">
         <!-- DATA: Replace .cp* gradient divs with real <img> thumbnails from your clip library -->
-        <!-- set A — 7 clips -->
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp1"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.2s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>98</div><div class="cdur">0:47</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.1s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>95</div><div class="cdur">1:12</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp3"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:3.8s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>91</div><div class="cdur">0:38</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp4"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.7s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>87</div><div class="cdur">1:04</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp5"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:6s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>93</div><div class="cdur">0:55</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp6"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.4s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>84</div><div class="cdur">0:42</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.5s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>96</div><div class="cdur">1:18</div></div></div>
-        <!-- set B — duplicate -->
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp1"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.2s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>98</div><div class="cdur">0:47</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.1s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>95</div><div class="cdur">1:12</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp3"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:3.8s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>91</div><div class="cdur">0:38</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp4"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.7s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>87</div><div class="cdur">1:04</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp5"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:6s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>93</div><div class="cdur">0:55</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp6"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.4s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>84</div><div class="cdur">0:42</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.5s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>96</div><div class="cdur">1:18</div></div></div>
-        <!-- set C — duplicate -->
+        <!-- DATA: Replace .cp* gradient divs with real <img> thumbnails from your clip library -->
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp1"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.2s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>98</div><div class="cdur">0:47</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.1s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>95</div><div class="cdur">1:12</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp3"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:3.8s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>91</div><div class="cdur">0:38</div></div></div>
@@ -588,6 +571,18 @@ footer{border-top:1px solid var(--border);padding:56px 24px 36px;position:relati
 </footer>
 
 <script>
+(function(){
+  const row=document.getElementById('clipRow');
+  if(!row)return;
+  const CLIP_W=140,GAP=22,COUNT=7,ONE_SET=COUNT*(CLIP_W+GAP);
+  row.innerHTML+=row.innerHTML;
+  let pos=0,running=true,raf;
+  function tick(){pos+=0.55;if(pos>=ONE_SET)pos-=ONE_SET;row.style.transform='translateX(-'+pos+'px)';if(running)raf=requestAnimationFrame(tick);}
+  raf=requestAnimationFrame(tick);
+  const mask=row.parentElement;
+  mask.addEventListener('mouseenter',()=>{running=false;cancelAnimationFrame(raf);});
+  mask.addEventListener('mouseleave',()=>{running=true;raf=requestAnimationFrame(tick);});
+})();
 window.addEventListener('scroll',()=>{document.getElementById('sp').style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';document.getElementById('nav').classList.toggle('scrolled',window.scrollY>30);},{passive:true});
 const rio=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('in'),i*80);rio.unobserve(el.target);}});},{threshold:.1});
 document.querySelectorAll('.fade').forEach(el=>rio.observe(el));
