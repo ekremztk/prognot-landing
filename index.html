@@ -55,8 +55,8 @@ h2{font-family:var(--fh);font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter
 .hero-tag{display:inline-flex;align-items:center;gap:10px;padding:5px 16px 5px 10px;border-radius:100px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);font-family:var(--fm);font-size:.65rem;font-weight:500;color:var(--violet-l);margin-bottom:28px;animation:fadeUp .6s .1s both;white-space:nowrap}
 .tag-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:tagPulse 2s ease infinite;flex-shrink:0}
 @keyframes tagPulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-family:var(--fh);font-weight:900;letter-spacing:-.05em;font-size:clamp(2.8rem,7vw,6rem);line-height:.97;margin-bottom:24px;animation:fadeUp .6s .2s both;white-space:nowrap}
-@media(max-width:768px){.hero h1{white-space:normal;font-size:2.8rem}}
+.hero h1{font-family:var(--fh);font-weight:900;letter-spacing:-.05em;font-size:clamp(2.2rem,5.6vw,4.8rem);line-height:.97;margin-bottom:24px;animation:fadeUp .6s .2s both;white-space:nowrap}
+@media(max-width:768px){.hero h1{white-space:normal;font-size:2.2rem}}
 .hero h1 em{font-style:normal;background:linear-gradient(135deg,#c4b5fd 0%,var(--violet-l) 40%,var(--electric) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradPan 4s ease infinite}
 @keyframes gradPan{0%{background-position:0% center}50%{background-position:100% center}100%{background-position:0% center}}
 .hero-desc{font-size:clamp(.92rem,1.5vw,1.08rem);color:var(--text-2);max-width:600px;margin:0 auto 36px;line-height:1.75;animation:fadeUp .6s .3s both}
@@ -76,10 +76,10 @@ h2{font-family:var(--fh);font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter
 .clip-strip-mask::before,.clip-strip-mask::after{content:'';position:absolute;top:0;bottom:0;width:160px;z-index:10;pointer-events:none}
 .clip-strip-mask::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
 .clip-strip-mask::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
-.clip-row{display:flex;gap:14px;animation:stripScroll 26s linear infinite;width:max-content;padding:20px 0;align-items:center}
+.clip-row{display:flex;gap:22px;animation:stripScroll 32s linear infinite;width:max-content;padding:24px 0;align-items:center}
 @keyframes stripScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-.clip-thumb{width:108px;height:192px;border-radius:18px;flex-shrink:0;position:relative;cursor:pointer;transition:transform .45s var(--spring);transform-origin:center center}
+.clip-thumb{width:140px;height:250px;border-radius:18px;flex-shrink:0;position:relative;cursor:pointer;transition:transform .45s var(--spring);transform-origin:center center}
 .clip-thumb:hover{transform:scale(1.13) translateY(-12px);z-index:20}
 .clip-inner{position:absolute;inset:0;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 8px 32px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.06)}
 .clip-bg-fill{position:absolute;inset:0}
@@ -358,27 +358,22 @@ footer{border-top:1px solid var(--border);padding:56px 24px 36px;position:relati
     <div class="clip-strip-mask">
       <div class="clip-row" id="clipRow">
         <!-- DATA: Replace .cp* gradient divs with real <img> thumbnails from your clip library -->
+        <!-- set A — 7 clips -->
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp1"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.2s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>98</div><div class="cdur">0:47</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.1s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>95</div><div class="cdur">1:12</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp3"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:3.8s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>91</div><div class="cdur">0:38</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp4"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.7s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>87</div><div class="cdur">1:04</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp5"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:6s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>93</div><div class="cdur">0:55</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp6"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.4s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>84</div><div class="cdur">0:42</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp1"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.5s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>96</div><div class="cdur">1:18</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp3"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:3.5s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>90</div><div class="cdur">0:51</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.9s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>82</div><div class="cdur">0:33</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp5"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.8s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>94</div><div class="cdur">1:07</div></div></div>
-        <!-- duplicate for seamless loop -->
+        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.5s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>96</div><div class="cdur">1:18</div></div></div>
+        <!-- set B — exact duplicate for seamless loop -->
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp1"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.2s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>98</div><div class="cdur">0:47</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.1s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>95</div><div class="cdur">1:12</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp3"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:3.8s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>91</div><div class="cdur">0:38</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp4"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.7s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>87</div><div class="cdur">1:04</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp5"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:6s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>93</div><div class="cdur">0:55</div></div></div>
         <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp6"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.4s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>84</div><div class="cdur">0:42</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp1"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.5s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>96</div><div class="cdur">1:18</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp3"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:3.5s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>90</div><div class="cdur">0:51</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:4.9s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#f59e0b"></span>82</div><div class="cdur">0:33</div></div></div>
-        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp5"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.8s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>94</div><div class="cdur">1:07</div></div></div>
+        <div class="clip-thumb"><div class="clip-inner"></div><div class="clip-bg-fill cp2"></div><div class="clip-frost"></div><div class="clip-sheen" style="--sd:5.5s"></div><div class="clip-overlay"><div class="csb"><span class="sdot" style="background:#10b981"></span>96</div><div class="cdur">1:18</div></div></div>
       </div>
     </div>
   </div>
